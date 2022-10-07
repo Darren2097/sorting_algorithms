@@ -21,7 +21,7 @@ void insertion_sort_list(listint_t **list)
 
 	while (nxt_node != NULL)
 	{
-		while (nxt_node->n < nxt_node->prev->n || nxt_node->prev != NULL)
+		while (nxt_node->n < nxt_node->prev->n && nxt_node->prev != NULL)
 		{
 			nxt_node->prev->next = nxt_node->next;
 			if (nxt_node->next != NULL)
@@ -36,8 +36,8 @@ void insertion_sort_list(listint_t **list)
 			else
 			{
 				nxt_node->prev->next = nxt_node;
-				print_list(*list);
 			}
+			print_list(*list);
 		}
 		nxt_node = nxt_node->next;
 	}
