@@ -12,12 +12,10 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *nxt_node;
 
-	if (list == NULL || *list == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	nxt_node = (*list)->next;
-	if (nxt_node == NULL)
-		return;
 
 	while (nxt_node != NULL)
 	{
